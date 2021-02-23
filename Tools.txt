@@ -3,3 +3,11 @@ Iniciando projeto react no PowerShell
 - yarn create react-app moveit --template=typescript
 
 - yarn start
+
+Criando Projeto com nextjs / Instalando typescript
+
+- yarn create next-app moveit-next
+
+- yarn add typescript @types/react @types/react-dom @types/node -D
+
+- yarn dev

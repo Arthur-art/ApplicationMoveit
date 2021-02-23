@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/*Variaveis */
+/*Variable */
 :root {
   --white: #fff;
   --background: #f2f3f5;
@@ -18,6 +18,8 @@
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
 }
+
+/*Responsive */
 
 @media (max-width: 1080px) {
   html {
