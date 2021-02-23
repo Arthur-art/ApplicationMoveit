@@ -1,10 +1,15 @@
+import styles from '../styles/components/Profile.module.css'
+
 export function Profile(){
     return (
-        <div>
+        <div className={styles.profileContainer}>
             <img src="https://github.com/arthur-art.png" alt="Arthur"/>
             <div>
                 <strong>Arthur Teixeira</strong>
-                <p>Level 1</p>
+                <p>
+                    <img src="icons/level.svg" alt=""/>
+                    Level 1
+                </p>
             </div>
         </div>
     );
