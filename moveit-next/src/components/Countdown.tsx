@@ -6,6 +6,7 @@ let countdownTimeout: NodeJS.Timeout;
 export function Countdown() {
   const [time, setTime] = useState(0.05 * 60);
   const [isActive, setIsActive] = useState(false);
+  const [hasFinished, setHasFineshed] = useState(false);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -19,10 +20,10 @@ export function Countdown() {
     setIsActive(true);
   }
 
-  function resetCountdown(){
-      clearTimeout(countdownTimeout);
-      setIsActive(false);
-      setTime(0.05 * 60);
+  function resetCountdown() {
+    clearTimeout(countdownTimeout);
+    setIsActive(false);
+    setTime(0.05 * 60);
   }
 
   useEffect(() => {
@@ -30,6 +31,9 @@ export function Countdown() {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1);
       }, 1000);
+    } else if (isActive && time === 0) {
+      setHasFineshed(true);
+      setIsActive(false);
     }
   }, [isActive, time]);
 
@@ -47,22 +51,28 @@ export function Countdown() {
         </div>
       </div>
 
-      {isActive ? (
-        <button
-          onClick={resetCountdown}
-          type="button"
-          className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-        >
-          Abandonar ciclo
-        </button>
+      {hasFinished ? (
+        <button disabled className={styles.countdownButton}> Ciclo Encerrado</button>
       ) : (
-        <button
-          onClick={startCountdown}
-          type="button"
-          className={styles.countdownButton}
-        >
-          Iniciar um ciclo
-        </button>
+        <>
+          {isActive ? (
+            <button
+              onClick={resetCountdown}
+              type="button"
+              className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+            >
+              Abandonar ciclo
+            </button>
+          ) : (
+            <button
+              onClick={startCountdown}
+              type="button"
+              className={styles.countdownButton}
+            >
+              Iniciar um ciclo
+            </button>
+          )}
+        </>
       )}
     </div>
   );
