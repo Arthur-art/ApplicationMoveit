@@ -1,0 +1,26 @@
+[{
+    "type": "body",
+    "description": "Beba água.",
+    "amount": 90
+},
+{
+    "type": "body",
+    "description": "Faça um alongamento.",
+    "amount": 90
+},
+{
+    "type": "eye",
+    "description": "Feche os olhos durante dois minutos.",
+    "amount": 80
+},
+{
+    "type": "body",
+    "description": "Pratique Ingles no Duolingo.",
+    "amount": 100
+},
+{
+    "type": "body",
+    "description": "Descance 30 min.",
+    "amount": 80
+}
+]
